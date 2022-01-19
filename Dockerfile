@@ -48,7 +48,14 @@ ENV    LANG="ja_JP.UTF-8" \
     LC_ALL="ja_JP.UTF-8"
  
 # MeCabのPythonラッパーインストール
-RUN pip install --no-cache-dir mecab-python3
+RUN pip install --no-cache-dir mecab-python3 \
+ && pip install --no-cache-dir pandas \
+ && pip install --no-cache-dir mojimoji \
+ && pip install --no-cache-dir neologdn \
+ && pip install --no-cache-dir networkx \
+ && pip install --no-cache-dir matplotlib \
+ && pip install --no-cache-dir japanize-matplotlib \
+ && pip install --no-cache-dir scipy
  
 # インストールに使用したファイルを削除
 RUN rm -rf /work/*
