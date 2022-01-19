@@ -1,0 +1,13 @@
+version: "3"
+services:
+  pymecab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pymecab
+    hostname: pymecab
+    # コンテナを起動し続ける
+    tty: true
+    environment:
+      # タイムゾーン設定
+      TZ: 'Asia/Tokyo'
